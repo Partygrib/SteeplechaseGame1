@@ -57,10 +57,11 @@ public class Main extends Application {
             //создаем дорогу препятствий
             int a = new Random().nextInt(3);
             Let let = new Let(a);
+            //небольшой отдых после 10 препятствий
             if (i % 10 == 0) k = k + 100;
             let.setTranslateX(i * (900 + k) + 1200 + let.getWidth());
-            if (a == 1) let.setTranslateY(506 - let.getHeight());
-            else let.setTranslateY(546);
+            if (a == 1) let.setTranslateY(506 - let.getHeight()); //если препятствие высокое
+            else let.setTranslateY(546); //если препятствие низкое
             lets.add(let);
             gameField.getChildren().addAll(let);
         }
